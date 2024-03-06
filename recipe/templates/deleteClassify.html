@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style/addClassify.css.css">
+    <script src="{{ url_for('static', filename='scripts/jquery.js') }}"></script>
+</head>
+
+<body>
+<form action="" method="post" novalidate enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="allCont">
+        <div class="title">
+            <div style="display: flex;"></div>
+
+            <a href="#"><img id="return" src="../static/img/left.png"alt=""></a>
+            <h1> Delete classify</h1>
+        </div>
+        <div class="main">
+            <p>Choose one classify</p>
+            {% for c in classes %}
+            <label><input name="region" type="radio" value="{{c.region}}" />{{ c.region }}</label>
+            </br>
+            {% endfor %}
+             <a href="#" class="go">{{ form.submit() }}</a>
+
+        </div>
+
+    </div>
+
+    <script>
+        var fileInput = document.querySelector('input[type=file]');
+
+
+        function a(e) {
+            console.log(e.parentNode)
+            var file = e.files[0];
+            console.log(file)
+            var reader = new FileReader();
+
+
+            // Listen to the onload event of the reader object and assign the base64 encoding to the preview image when the image is loaded
+            reader.addEventListener("load", function () {
+                var title = e.parentNode;
+                var next = title.nextElementSibling;
+                next.innerHTML = `<img src="${reader.result}" height="270" width="390">`;
+
+            }, false);
+
+            // Call the reader.readAsDataURL() method to convert the image to base64
+            reader.readAsDataURL(file);
+        }
+    </script>
+
+</form>
+</body>
+</html>
+
+{% endblock %}

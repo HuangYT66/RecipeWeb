@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+/*middle */
+.allCont{
+    width: 1260px;
+    margin: 0 auto;
+    background: #fff;
+    padding-bottom: 100px;
+    height: 100%;
+    /*overflow: hidden;*/
+}
+
+body {
+    background-size: cover;
+    background: rgba(229, 208, 175, 0.8);
+    /*background:  #eeece9;*/
+    /*transform: scale(0.7) translate(0px, -200px);*/
+}
+input{
+    font-size: 20px;
+}
+
+.main {
+    width: 1200px;
+    height: 500px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+.main > p {
+    color: darkred;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.iptone {
+    width: 79%;
+    height: 40px;
+    padding-left: 20px;
+    border: 1px solid gray;
+    outline: none;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.ipttwo {
+    outline: none;
+    resize: none;
+    padding: 17px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #efefef;
+}
+button:hover{
+    border:2px solid #c76b6b;
+}
+button:active{
+background: #e0aa49;
+}
+button:focus{
+background: #943a3a;
+}
+
+.maintwo {
+    width: 1200px;
+    height: 600px;
+    margin: 10px auto;
+}
+
+/*.mainthree {*/
+/*    width: 1200px;*/
+/*    height: 100px;*/
+/*    margin: 10px auto;*/
+/*}*/
+
+.title {
+    width: 1200px;
+    margin: 0px auto;
+    height: 60px;
+    font-size: 25px;
+    box-sizing: border-box;
+
+}
+
+.title > h1 {
+    font-weight: 400;
+    line-height: 60px;
+}
+textarea{
+    font-size: 25px;
+}
+
+.title img {
+    height: 70px;
+    display: block;
+    float: left;
+    margin-top: -6px;
+    margin-left: -12px;
+    margin-right: 5px;
+}
+
+
+#mat{
+    width: 300px;
+    height: 35px;
+}
+
+
+section {
+    width: 1200px;
+    box-sizing: border-box;
+    margin-top: 80px;
+}
+
+section p {
+    font-size: 30px;
+    color: darkred;
+}
+
+.pl {
+    padding: 4px 10px;
+    margin-top: 10px;
+}
+
+.onebox {
+    width: 100%;
+    height: 280px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.obox_one {
+    width: 400px;
+    height: 280px;
+    float: left;
+    background-color: #efefef;
+    box-sizing: border-box;
+    border: 1px solid #999;
+}
+
+.obox_one img {
+    margin: auto;
+    display: block;
+}
+
+.obox_one p:nth-child(2) {
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+}
+
+.obox_one p:nth-child(3) {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.sm {
+    padding: 10px;
+    margin-left: 10px;
+    resize: none;
+    float: left;
+}
+
+.btns {
+    width: 150px;
+    height: 200px;
+    float: left;
+
+}
+
+.btns:hover{
+    border: black;
+}
+
+.btns > div {
+    width: 130px;
+    height: 30px;
+    background-color: #efefef;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    border: 1px solid gray;
+}
+
+.btns > div > span {
+    display: block;
+    text-align: center;
+    margin-right: 15px;
+    width: 30px;
+    padding-top: 5px;
+    height: 30px;
+    border-right: 1px solid gray;
+    box-sizing: border-box;
+}
+
+.btns > div:nth-child(1) > span {
+    /*background-color: rgb(236, 55, 94);*/
+    height: 32px;
+    width: 36px;
+    border: none;
+    background: #b28a8a;
+
+}
+
+.btns > div > span > img {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.smtwo {
+    padding-top: 15px;
+}
+
+/*set css for add photo*/
+#upload-input {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    width:200px;
+    height:200px;
+
+}
+
+.obox_one>div>img{
+    width: 398px;
+    height: 270px;
+}
+
+ .go{
+            text-align: center;
+            display:table;
+            height: 32px;
+            padding: 12px;
+            font: 900 20px '';
+            border-radius: 10px;
+            margin-top: 20px;
+            color: #fff;
+            letter-spacing: 3px;
+            background-image: linear-gradient(to left,
+            #debe66, #ab4f4f);
+        }
+
+  /*.go{*/
+  /*          overflow: hidden;*/
+  /*          display: flex;*/
+  /*          flex-direction: column;*/
+  /*     background-color: transparent;*/
+  /*      }*/
+
+      #submit{
+        width: 300px;
+        height: 100%;
+        outline: none;
+        border: 0;
+        padding: 10px;
+        background-color: transparent;
+        font: 900 20px '';
+    }
+      ul#classify{
+          margin-top: 5px;
+          font-size: 25px;
+      }
+

@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    background-color: #eeece9;
+}
+.w{
+    width: 1000px;
+    margin: 0 auto;
+}
+.centent{
+    box-sizing: border-box;
+    padding: 0 50px;
+    background-color: #fff;
+}
+
+h2{
+    padding-top: 50px;
+    padding-bottom: 23px;
+    text-align: center;
+    font-size: 30px;
+}
+.banner{
+    text-align: center;
+}
+.box1{
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px 0;
+    line-height: 53px;
+    height: 53px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #eaeaea;
+}
+.box1>span{
+    float: right;
+    color: #999;
+    padding-right: 20px;
+}
+#collectButton{
+    margin-top: 10px;       
+    float: right;
+    background-color: #993300;
+    color: #fff;
+    height: 32px;
+    width: 86px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#pic{
+    margin-top: 10px;
+    float: right;
+    background-color: #993300;
+    color: #fff;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box1>button>img{
+    padding-top: 3px;
+    padding-right: 5px;
+}
+.name{
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 35px;
+    font-size:17px;
+}
+.name>a{
+    color: #930;
+    font-weight: 400;
+}
+.name>a:hover{
+    border-bottom: 1px solid #930;
+}
+.name>span{
+    font-weight: 400;
+}
+.tit{
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 8px;
+}
+td{
+    border: 1px solid #eaeaea;
+}
+.cell{
+    position: relative;
+    padding: 5px;
+    line-height: 30px;
+    text-align: left;
+    font-size: 14px;
+}
+.cell>a:nth-child(1){
+    color: #930;
+}
+.cell>a:nth-child(1) span{
+    color: #999;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+.cell>span{
+    color: #999;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+.cell>a:nth-child(2){
+    background-color: #ccc;
+    color: #fff;
+    position: absolute;
+    right: 5px;
+    top: 32%;
+    font-size: 12px;
+    line-height: 15px;
+}
+.cell:hover .ts{
+    background-color: #930;
+}
+.dst{
+    font-weight: 600;
+    color: #666;
+    padding-top: 35px;
+    padding-bottom: 10px;
+    font-size: 19px;
+}
+.list{
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px dotted #d7d7d7;
+}
+
+.list>img{
+    width: 180px;
+    height: 130px;
+    margin-right: 10px;
+}
+
+#perStep{
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+    font-family:ff-tisa-web-pro-1;
+}
+
+.dark-mode{
+  background-color: black;
+  color: #7c2c2c;
+}
+h3.dark-mode{
+	color: white;
+}
+
+
+#hello.dark-mode.centent{
+	background: #0a0a0a;
+}

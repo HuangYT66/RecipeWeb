@@ -1,0 +1,121 @@
+*{
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+        }
+/*Set the background for the entire page*/
+        body{
+            justify-content: center;
+            align-items: center;
+            background-image: url('./background.png');
+            background-image: linear-gradient(to right bottom, rgb(217, 191, 146), rgb(161, 35, 56));
+            background-size: cover;
+        }
+
+        .hidee{
+            height: 30px;
+            width: 50%;
+        }
+
+         /*Set the style of the big box in the middle*/
+        .sign{
+            width: 550px;
+            height: 630px;
+            display: flex;
+            margin-top: 30px;
+            margin:0 auto;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(
+                /*to right bottom,*/
+                rgba(255,255,255,.7),
+                rgba(255,255,255,.5),
+                rgba(255,255,255,.4)
+            );
+            /* Blur the background */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px #eec21b;
+            border-radius: 15px;
+        }
+
+
+   /*Change the style of the "login" title bar*/
+        .table{
+            font: 900 40px '';
+            text-align: center;
+            letter-spacing: 5px;
+            color: #3d3d3d;
+        }
+ /*Modify the style of the text box that includes all text*/
+        /**/
+        .box{
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box input{
+            width: 400px;
+            height: 100%;
+            outline: none;
+            border: 0;
+            padding: 4px;
+            background-color: transparent;
+            font: 900 16px '';
+        }
+ /*Modify input box style (underline)*/
+     #name_user{
+            margin-top: 20px;
+            border: #9C1A1C;
+        }
+        #input_user{
+             border-bottom: 3px solid rgb(119, 29, 29);
+        }
+        #name_email{
+            margin-top: 20px;
+            border: #9C1A1C;
+        }
+        #input_email{
+            border-bottom: 3px solid rgb(119, 29, 29);
+        }
+        #name_password{
+            margin-top: 20px;
+        }
+        #input_password{
+             border-bottom: 3px solid rgb(119, 29, 29);
+        }
+        #name_password2{
+            margin-top: 20px;
+        }
+        #input_password2{
+             border-bottom: 3px solid rgb(119, 29, 29);
+        }
+ /*submit button*/
+        .go{
+            text-align: center;
+            display: block;
+            height: 40px;
+            padding: 12px;
+            font: 900 20px '';
+            border-radius: 10px;
+            margin-top: 20px;
+            color: #fff;
+            letter-spacing: 3px;
+            background-image: linear-gradient(to left,
+            #debe66, #ab4f4f);
+        }
+
+        #submit{
+            height: 60px;
+            margin-top: -20px;
+        }
+
+                .dark-mode {
+  background-color: black;
+  color: white;}
+        body.dark-mode{
+            background: black;
+        }
+
+

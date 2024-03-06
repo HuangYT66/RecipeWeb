@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    background-color: #ffffff;
+}
+.w{
+    width: 1000px;
+    margin: 0 auto;
+}
+.centent{
+    box-sizing: border-box;
+    padding: 0 50px;
+    background-color: #ffffff;
+}
+
+button{
+    background-color: #ce8483;
+    border-color: #ce8483;
+    height: 40px;
+    width: 100px;
+}
+
+.buttons{
+    text-align: center;
+}
+
+.cell{
+    position: relative;
+    padding: 20px;
+    line-height: 30px;
+    text-align: left;
+    font-size: 14px;
+}
+
+h2{
+    padding-top: 50px;
+    padding-bottom: 23px;
+    text-align: center;
+}
+
+section{
+    color: #357ebd;
+}
+
+

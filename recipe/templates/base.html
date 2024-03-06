@@ -1,0 +1,136 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Recipe</title>
+        {% else %}
+        <title>Cook King</title>
+        {% endif %}
+
+		<link href="{{ url_for('static', filename='style/login.css') }}" rel="stylesheet" type="text/css" media="all">
+		<link href="{{ url_for('static', filename='style/passwordEdit.css') }}" rel="stylesheet" type="text/css" media="all">
+		<link href="{{ url_for('static', filename='style/editInformation.css') }}" rel="stylesheet" type="text/css" media="all">
+		<link href="{{ url_for('static', filename='style/signup.css') }}" rel="stylesheet" type="text/css" media="all">
+		<link href="{{ url_for('static', filename='style/personal.css') }}" rel="stylesheet" type="text/css" media="all">
+        <link href="{{ url_for('static', filename='style/bootstrap.css') }}" rel="stylesheet" type="text/css" media="all">
+		<link href="{{ url_for('static', filename='style/addRecipe.css') }}" rel="stylesheet" type="text/css" media="all">
+		<link href="{{ url_for('static', filename='style/recipe.css') }}" rel="stylesheet" type="text/css" media="all">
+
+        <link href="{{ url_for('static', filename='style/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style/magnific-popup.css') }}">
+<!--The drop-down bar can be clicked-->
+	    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+
+		<script>
+		function myFunction() {
+			// var text = $(".LightOrDark").text();
+			// console.log(text)
+			//
+			// if(text == "Light"){
+			// 	let data = {'style': text};
+			// 	$.ajax({
+			// 		url: "/base",
+			// 		type: "post",
+			// 		contentType: "application/json; charset=UTF-8",
+			// 		data: JSON.stringify(data),
+			// 		success: function (response) {
+			// 			// var content = response[0]['cancel'];
+			// 			// var user = response[1]['username'];
+			// 			// console.log(user)
+			// 			// if (user === null){
+			// 			//     alert("Please login first!")
+			// 			// }else{
+			// 			console.log("HHHHHH")
+			// 				$("#LightOrDark").text("Dark")
+			// 			// }
+			//
+			// 			// $("#collectButton").innerHTML = '<img src="../static/img/rec_oper_save.png" alt="">cancel'
+			// 		},
+			// 		error: function () {
+			// 		}
+			// 	});
+			// }else{
+			// 	let data = {'style': text};
+			// 	$.ajax({
+			// 		url: "/base",
+			// 		type: "post",
+			// 		contentType: "application/json; charset=UTF-8",
+			// 		data: JSON.stringify(data),
+			// 		success: function (response) {
+			// 			// var content = response[0]['cancel'];
+			// 			$("#LightOrDark").text("Light")
+			// 			// $("#collectButton").innerHTML = '<img src="../static/img/rec_oper_save.png" alt="">cancel'
+			// 		},
+			// 		error: function () {
+			// 		}
+			// 	});
+			// }
+
+
+		   var element = document.body;
+		   element.classList.toggle("dark-mode");
+		   if(document.getElementById("centent")) { document.getElementById("centent").style="background-color: #867B6ACC";}
+		   if(document.getElementById("headery")) {
+			   document.getElementById("headery").style = "background-image: linear-gradient( to right bottom, rgb(100, 54, 54), rgba(150, 131, 102, 0.8)), url(https://images.unsplash.com/photo-1499615767948-e6a89ef6060f?auto=format&fit=crop&w=1050&q=80);";
+		   }
+		   // console.log(document.getElementById("card_content"));
+		   // if(document.getElementById("card_content")){
+			// document.getElementById("card_content").style=  "background: linear-gradient(to bottom left,  #641421 40%, #8c644d 100%)";
+		   // }
+		}
+	</script>
+
+<!--	style for text-->
+
+
+    </head>
+    <body>
+
+
+
+    <!-- header -->
+ <div class="banner1">
+		<div class="header">
+		<div class="container">
+			<div class="logo">
+				<img src="/static/img/logo.png" class="img-responsive" alt="" />
+			</div>
+				<div class="hader-left">
+				<h1>Cook King</h1>
+				</div>
+				<div class="head-nav">
+					<span class="menu"> </span>
+						<ul class="cl-effect-3">
+							<li><a href="#" onclick="myFunction()" class="LightOrDark">Light</a></li>
+							<li><a href="{{ url_for('index') }}">Home</a></li>
+							<li><a href="{{ url_for('upload_recipe') }}">add</a></li>
+                            {% if username %}
+                            <li><a href="{{ url_for('personal')}}">{{ username }}</a></li>
+                            <li><a href="{{ url_for('logout')}}">logout</a></li>
+                            {% else %}
+                            <li><a href="{{ url_for('login')}}">login</a></li>
+                            <li><a href="{{ url_for('signup')}}">register</a></li>
+                            {% endif %}
+								<div class="clearfix"> </div>
+						</ul>
+				</div>
+			<div class="clearfix"> </div>
+						<!-- script-for-nav -->
+					<script>
+						$( "span.menu" ).click(function() {
+						  $( ".head-nav ul" ).slideToggle(300, function() {
+							// Animation complete.
+						  });
+						});
+					</script>
+				<!-- script-for-nav -->
+				</div>
+			</div>
+			</div>
+<!-- header -->
+
+
+
+        {% block content %}{% endblock %}
+    </body>
+
+</html>

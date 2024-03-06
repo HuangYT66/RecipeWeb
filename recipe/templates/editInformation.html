@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/editInformation.css') }}">
+<!--    <script src="{{ url_for('static', filename='scripts/signup.js') }}"></script>-->
+</head>
+
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <body>
+    <div class="hidee"></div>
+    <div class="edit">
+        <div class="box">
+            <p class="table">Edit Information</p>
+            <br>
+            <!--Prompt for a username on the page and add form -->
+                <span id = name_user>Name</span>
+                <span id = input_user>{{form.username( value=username ) }}</span>
+<!--            <span id = checkuser></span>-->
+                 {% for error in form.username.errors %}
+                     <span style="color: red;">{{ error }}</span>
+                    {% endfor %}<br>
+
+            <!--Prompt for age on the page and add form -->
+                <span id = name_age>Age</span>
+                <span id = input_age>{{form.age( value=age )}}</span>
+
+            {% for error in form.age.errors %}
+                     <span style="color: red;">{{ error }}</span>
+                    {% endfor %}<br>
+
+             <!--Prompt for gender on the page and add form -->
+                <span id = name_gender>Gender</span>
+                <span id = input_gender>{{form.gender( value=gender )}}</span>
+            {% for error in form.gender.errors %}
+                     <span style="color: red;">{{ error }}</span>
+                    {% endfor %}<br>
+
+            <!--Prompt for my detail on the page and add form -->
+            <span id = name_detail>My detail</span>
+                <span id = input_detail>
+                    {{form.detail( value=detail )}}
+                </span>
+                 {% for error in form.detail.errors %}
+                     <span style="color: red;">{{ error }}</span>
+                    {% endfor %}<br>
+
+
+
+<!--                <ul>-->
+<!--                    {% for message in messages %}-->
+<!--                    <li style="color: red;">{{ message }}</li>-->
+<!--                    {% endfor %}-->
+<!--                </ul>-->
+
+
+
+            <a href="#" class="go">{{ form.submit() }}</a>
+        </div>
+
+    </div>
+ <div class="hidee"></div>
+</body>
+
+
+ </form>
+
+{% endblock %}

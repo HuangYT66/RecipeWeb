@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<head>
+    <link rel="stylesheet" href="../static/style/collection.css">
+</head>
+
+<body>
+<header class="headerr">
+    <div class="text-box">
+        <h1 class="heading-primary">
+            <span class="heading-primary-main">My collection</span>
+            <span class="heading-primary-sub">Here are all the recipes you have in your collection</span>
+        </h1>
+    </div>
+</header>
+
+
+<!--<div class="main">-->
+<!--    <ul class="cards">-->
+<!--        &lt;!&ndash;The for loop inputs data&ndash;&gt;-->
+<!--          {% for d in dic %}-->
+<!--        <li class="cards_item">-->
+<!--            <div class="card">-->
+<!--                 <img src="{{dic.get(d)}}" height="500px" weight="350px"></div>-->
+<!--                <div class="card_content">-->
+<!--                    <h2 class="card_title" id="title">{{ d.recipe }}</h2>-->
+<!--                    <p class="card_text"></p>-->
+<!--                    <a href="{{ url_for('recipe', name=d.recipe) }}">-->
+<!--                        <button class="btn card_btn">Read More</button>-->
+<!--                    </a>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </li>-->
+<!--        {% endfor %}-->
+
+<!--    </ul>-->
+<!--</div>-->
+
+<div class="main">
+  <h2 id="head1_2">Choose anything you want </h2>
+  <ul class="cards">
+<!--The for loop inputs data-->
+    {% for d in dic %}
+      <li class="cards_item">
+        <div class="card">
+             <div class="card_image"><img src="{{dic.get(d)}}" height="500px" weight="350px"></div>
+          <div class="card_content" id="card_content">
+            <h2 class="card_title" id="title" >{{ d }}</h2>
+            <p class="card_text"></p>
+             <a href="{{ url_for('recipe', name=d) }}" style="text-decoration:none">
+                <button class="btn card_btn">Read More</button>
+              </a>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+
+<!--<h3 class="made_by">have a good day!</h3>-->
+
+</body>
+{% endblock %}
+
+

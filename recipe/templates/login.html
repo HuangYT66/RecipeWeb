@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<html lang="en">
+
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/login.css') }}">
+</head>
+
+
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <body>
+    <div class="hidee"></div>
+    <div class="login">
+        <div class="box">
+            <p class="table">Login</p>
+            <br>
+            <!--Prompt for a username on the page and add form -->
+            {{ form.username.label }}
+            <span id=input_user>{{ form.username(size=32) }}</span>
+            <!--Check whether the user name is in the database.
+            If not, a message is displayed indicating that the user entered an error-->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li style="color: red;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
+            <!--            Check whether the user name column is empty.
+             If it is empty, remind the user that this field cannot be empty-->
+            {% for error in form.username.errors %}
+            <span style="color: red;">{{ error }}</span>
+            {% endfor %}<br>
+
+
+            <!--Prompt for a password on the page and add form -->
+            <div id=name_password>{{ form.password.label }}</div>
+            <div id=input_password>{{ form.password(size=32) }}</div>
+
+            <!--Check whether the password is in the database.
+If not, a message is displayed indicating that the user entered an error-->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li style="color: red;">{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+
+            <!--            Check whether the password column is empty.
+             If it is empty, remind the user that this field cannot be empty-->
+            {% for error in form.password.errors %}
+            <span style="color: red;">{{ error }}</span>
+
+            {% endfor %}
+            <br>
+            <!--            submit button-->
+            <a href="#" class="go">{{ form.submit() }}</a>
+
+        </div>
+        <!--        Realize the remember me function-->
+<!--        <span id=remember>{{ form.remember_me }}{{ form.remember_me.label }}</span>-->
+    </div>
+ <div class="hidee"></div>
+    </body>
+
+
+</form>
+</html>
+
+{% endblock %}

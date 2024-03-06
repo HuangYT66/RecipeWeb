@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Work</title>
+    <!--	set style for layout-->
+    <link href="../static/style/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+    <!-- set style for text-->
+    <link href="../static/style/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--	set background style-->
+    <meta http-equiv="Content-Type" content="text/html"/>
+    <!--<meta name="keywords" content="Cappuccino Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, -->
+    <!--Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />-->
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <script src="../static/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/style/magnific-popup.css">
+    <script type="text/javascript" src="../static/scripts/move-top.js"></script>
+    <script type="text/javascript" src="../static/scripts/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            alert("2")
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1200);
+            });
+        });
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+            */
+            alert("1")
+            $().UItoTop({easingType: 'easeOutQuart'});
+        });
+    </script>
+</head>
+<body>
+<div>
+
+    <!--<h2>Toggle Dark/Light Mode</h2>-->
+    <!--<p>Click the button to toggle between dark and light mode for this page.</p>-->
+
+    <!--<button onclick="myFunction()">Toggle dark mode</button>-->
+</div>
+
+
+<!--Dynamically generate the recommendation menu-->
+<div class="container">
+    <div class="specials">
+        <h3>Recommended Dishes</h3>
+        <div class="special-top">
+            <!--					Passing through a dictionary-->
+            {% for key in recipe1 %}
+            <div class="col-md-3 special-in">
+                <a><img src="{{recipe1.get(key)}}" height="300px" width="300px" class="img-responsive" alt="">
+                </a>
+                <h5><a>{{key}}</a></h5>
+                <!--						<p>Americano</p>-->
+            </div>
+            {% endfor %}
+            <div class="clearfix"></div>
+        </div>
+        <div class="special-top">
+            <!--Dynamically generate the recommendation menu-->
+            <!--					Passing through a dictionary-->
+            {% for key in recipe2%}
+            <div class="col-md-3 special-in">
+                <a><img src="{{recipe2.get(key) }}" height="300px" width="300px" class="img-responsive" alt="">
+                </a>
+                <h5><a>{{key}}</a></h5>
+                <!--						<p>Americano</p>-->
+            </div>
+            {% endfor %}
+            <div class="clearfix"></div>
+        </div>
+        <br>
+        <br>
+        <!--				classify-->
+
+        <!--				The main menu classification function-->
+        <h3>Classification</h3>
+        <div class="special-bottom">
+            {% for key in classify%}
+            <!--					style="background:url(../static/img/chinese.jfif) no-repeat center"-->
+            <div class="col-md-6 bottom-special">
+                <!--					<div class="col-md-6 bottom-special" style="background:url(../static/img/chinese.jfif) no-repeat center; object-fit:scale-down">-->
+                <!--						<a  ><img src="../static/img/chinese.jfif"  class="img-responsive" alt=""></a>-->
+                <a><img src="{{classify.get(key) }}" class="img-responsive" alt=""></a>
+                <h4><a href="{{ url_for('classify', name = key )}}">{{key}} Food</a></h4>
+                <!--						<p>It has a long history, exquisite technology, different flavors, rich categories, numerous schools and unique style.</p>-->
+                <a href="{{ url_for('classify', name = key)}}" class="more">Read More</a>
+            </div>
+            {% endfor %}
+            <!--					<div class="col-md-6 bottom-special-1">-->
+            <!--						<h5><a href="{{ url_for('classify', name = 'England')}}">ENGLAND FOOD</a></h5>-->
+            <!--						<p>Use high-quality raw materials simply and effectively, and keep their original texture and flavor as much as possible.</p>-->
+            <!--						<a href="{{ url_for('classify', name = 'England')}}" class="more">Read More</a>-->
+            <!--					</div>-->
+            <!--					-->
+            <!--					<div class="col-md-6 bottom-special-2">-->
+            <!--						<h5><a href="{{ url_for('classify', name = 'Japan')}}">JAPAN FOOD</a></h5>-->
+            <!--						<p>Pay attention to shape and color. It is an excellent container. It matches with food. It is beautiful and meticulous</p>-->
+            <!--						<a href="{{ url_for('classify', name = 'Japan')}}" class="more">Read More</a>-->
+            <!--					</div>-->
+            <!--						<div class="col-md-6 bottom-special-3">-->
+            <!--						<h5><a href="{{ url_for('classify', name = 'South Korean')}}">KOREA FOOD</a></h5>-->
+            <!--						<p>There are usually two kinds of dishes, home style and banquet style, each with its own flavor and rich ingredients</p>-->
+            <!--						<a href="{{ url_for('classify', name = 'South Korean')}}" class="more">Read More</a>-->
+            <!--					</div>-->
+            <!--				-->
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!---->
+
+<!-- footer -->
+<div class="footer" id="contact">
+    <div class="container">
+        <div class="col-md-3 nam">
+            <!--				connect information-->
+            <h4>Connect</h4>
+            <p>If you want to add more classifications, please connect us</p>
+            <ul class="number">
+                </li>
+                <li><a href="mailto:yuting.wang1@ucdconnect.ie"><i class="mail"> </i>yuting.wang@ucdconnect.ie</a></li>
+                </li>
+                <li><a href="mailto:yuting.huang@ucdconnect.ie"><i class="mail"> </i>yuting.huang@ucdconnect.ie</a></li>
+            </ul>
+        </div>
+        <!--			course information-->
+        <div class="col-md-3 set">
+            <h4>Course Information</h4>
+            <p>COMP3019J - Introduction to Web Application Development 2022-2023</p>
+        </div>
+        <!--			school information-->
+        <div class="col-md-3 morb">
+            <h4>School</h4>
+            <p>Beijing University of Technology & University College Dublin</p>
+        </div>
+
+        <!--			button line-->
+        <div class="col-md-3 inte">
+            <h4>Integer sagitest</h4>
+            <div class="social">
+                <ul>
+                    <li><a href="http://www.facebook.com/"><i class="facebook"> </i></a></li>
+                    <li><a href="http://www.Twitter.com"><i class="twitter"> </i></a></li>
+                    <li><a href="#"><i class="in"> </i></a></li>
+                    <li><a href="https://www.pinterest.com/"><i class="pp"> </i></a></li>
+                    <li><a href="https://www.ooopn.com/tool/so/Google/Google.html"><i class="goog"> </i></a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- a.more -->
+<!-- footer -->
+<div class="footer-bottom">
+    <div class="container">
+        <p>This is a recipe website made by Yuting Wang(20205752) and Yuting Huang(20205737)</p>
+    </div>
+</div>
+<!-- footer -->
+
+</body>
+</html>
+
+{% endblock %}

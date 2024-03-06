@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Recipe</title>
+    {% endif %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/recipe.css') }}">
+    <script src="{{ url_for('static', filename='scripts/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/collect.js') }}"></script>
+</head>
+
+
+<body id="hello">
+<div class="centent w" id="centent" >
+    <h2>{{ title }}</h2>
+    <div class="banner">
+        <img src={{ image }} alt="" height="300px">
+    </div>
+    <div class="box1">
+        <Button id="collectButton" href="#" >{{collection}}</Button>
+        <Button id="pic"><img src="../static/img/rec_oper_save.png" alt=""></Button>
+<!--        <span>23356Browsing/4834collect</span>-->
+    </div>
+
+    <p class="name">Author:<a href="#">{{ author }}</a></p>
+    <p class="name">Description<br><span>{{ description }}</span></p>
+
+    <h3 class="tit">Materials</h3>
+<!--    show materials-->
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        {% for m in materials %}
+            {% if materials.get(m) == 1 %}
+                <tr>
+                    <td width="50%">
+                        <div class="cell">
+                            {{ m }}
+                        </div>
+                    </td>
+            {% else %}
+                    <td width="50%">
+                        <div class="cell">
+                            {{ m }}
+                        </div>
+                    </td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+
+    <div class="dst">Step</div>
+
+
+    <div class="list">
+        <ol>
+            {% for step in recipe %}
+            <img src={{ step }} alt="" height="250px">
+            <li id = perStep>{{ recipe.get(step) }}</li>
+            <br><br>
+            {% endfor %}
+        </ol>
+    </div>
+
+
+</div>
+
+
+</body>
+</html>
+{% endblock %}

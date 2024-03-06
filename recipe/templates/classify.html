@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<head>
+       <link rel="stylesheet" href="../static/style/classify.css">
+</head>
+
+
+
+<body>
+<header class="header_classify" id="headery">
+        <div class="text-box">
+            <h1 class="heading-primary" id="head1">
+                <span class="heading-primary-main">{{ title }}</span>
+                <span class="heading-primary-sub">Cooking - Make eating better!</span>
+            </h1>
+        </div>
+    </header>
+
+
+<div class="main">
+  <h1 id="head1_2">Choose anything you want </h1>
+  <ul class="cards">
+<!--The for loop inputs data-->
+    {% for d in dish %}
+      <li class="cards_item">
+        <div class="card">
+          <div class="card_image"><img src="{{dish.get(d)}}" ></div>
+          <div class="card_content" id="card_content">
+            <h2 class="card_title" id="title" >{{ d }}</h2>
+            <p class="card_text"></p>
+              <a href="{{ url_for('recipe', name=d) }}">
+                <button class="btn card_btn">Read More</button>
+              </a>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<h3 class="made_by">have a good day!</h3>
+
+</body>
+
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block content %}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/log.css') }}">
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+</head>
+
+
+<body>
+<div class="centent w">
+    <h2>Log</h2>
+
+    <div class="buttons">
+        <Button onclick="err()">Error</Button>
+    <Button onclick="warning()">Warning</Button>
+    <Button onclick="mes()">Message</Button>
+    </div>
+
+    <section>
+    </section>
+
+
+
+</div>
+
+<script>
+    function err() {
+
+        $("section").css("color", "#FF0000");
+
+        var obox = document.createElement('div');
+        obox.className = 'onebox';
+        obox.innerHTML = `
+            <tr>
+            {% for m in errors %}
+                <td width="100%">
+                    <div class="cell">
+                        {{ m.description }}
+                    </div>
+                </td>
+                {% endfor %}
+            </tr>
+        `;
+        var section = document.querySelector('section');
+            section.innerHTML = '';
+            section.appendChild(obox);
+    }
+</script>
+
+<script>
+    function warning() {
+
+        $("section").css("color", "#ff6a00");
+
+        var obox = document.createElement('div');
+        obox.className = 'onebox';
+        obox.innerHTML = `{% for m in warnings %}
+            <tr>
+                <td width="100%">
+                    <div class="cell">
+                        {{ m.description }}
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}`;
+        var section = document.querySelector('section');
+            section.innerHTML = '';
+            section.appendChild(obox);
+    }
+</script>
+
+<script>
+    function mes() {
+
+        $("section").css("color", "#0051ff");
+
+        var obox = document.createElement('div');
+        obox.className = 'onebox';
+        obox.innerHTML = `{% for m in messages %}
+            <tr>
+                <td width="100%">
+                    <div class="cell">
+                        {{ m.description }}
+                    </div>
+                </td>
+            </tr>
+        {% endfor %}`;
+        var section = document.querySelector('section');
+            section.innerHTML = '';
+            section.appendChild(obox);
+    }
+</script>
+
+
+</body>
+</html>
+{% endblock %}

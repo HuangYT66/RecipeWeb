@@ -1,0 +1,2 @@
+FLASK_APP='recipe'
+FLASK_DEBUG=True
